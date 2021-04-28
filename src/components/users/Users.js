@@ -14,16 +14,14 @@ const Users = () => {
     return <Spinner />;
   } else {
     return (
-      <div>
+      <div style={buttons}>
+        {users.length > 0 && <button onClick={prevPage}>prev</button>}
         <div style={userStyle}>
           {users.map((user) => (
             <UserItem key={user.id} user={user} />
           ))}
         </div>
-        <div style={buttons}>
-          <button onClick={prevPage}>prev</button>
-          <button onClick={nextPage}>next</button>
-        </div>
+        {users.length > 0 && <button onClick={nextPage}>next</button>}
       </div>
     );
   }
@@ -40,8 +38,8 @@ const buttons = {
   // flexDirection: "row",
   // justifyContent: "space-between",
   display: "grid",
-  gridTemplateColumns: "repeat(2, 1fr)",
-  gridGap: "1rem",
+  gridTemplateColumns: "0.5fr 2fr 0.5fr",
+  gridGap: ".5rem",
 };
 
 export default Users;

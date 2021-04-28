@@ -29,6 +29,7 @@ export default (state, action) => {
         users: [],
         page: 0,
         loading: false,
+        search: "",
       };
     case GET_REPOS: {
       return {
