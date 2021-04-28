@@ -1,10 +1,13 @@
 import {
   SEARCH_USERS,
   SET_LOADING,
+  SET_SEARCH,
   CLEAR_USERS,
   GET_USER,
-  GET_REPOS
-} from '../types';
+  GET_REPOS,
+  LOAD_NEXT_PAGE,
+  LOAD_PREV_PAGE,
+} from "../types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -12,31 +15,51 @@ export default (state, action) => {
       return {
         ...state,
         users: action.payload,
-        loading: false
+        loading: false,
       };
     case GET_USER:
       return {
         ...state,
         user: action.payload,
-        loading: false
+        loading: false,
       };
     case CLEAR_USERS:
       return {
         ...state,
         users: [],
-        loading: false
+        page: 0,
+        loading: false,
       };
     case GET_REPOS: {
       return {
         ...state,
         repos: action.payload,
-        loading: false
+        loading: false,
       };
     }
     case SET_LOADING:
       return {
         ...state,
-        loading: true
+        loading: true,
+      };
+    case LOAD_NEXT_PAGE:
+      return {
+        ...state,
+        page: state.page + 1,
+        users: action.payload,
+        loading: false,
+      };
+    case LOAD_PREV_PAGE:
+      return {
+        ...state,
+        page: state.page > 1 ? state.page - 1 : 1,
+        users: action.payload,
+        loading: false,
+      };
+    case SET_SEARCH:
+      return {
+        ...state,
+        search: action.payload,
       };
     default:
       return state;

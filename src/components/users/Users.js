@@ -7,6 +7,8 @@ const Users = () => {
   const githubContext = useContext(GithubContext);
 
   const { loading, users } = githubContext;
+  const prevPage = githubContext.loadPrevPage;
+  const nextPage = githubContext.loadNextPage;
 
   if (loading) {
     return <Spinner />;
@@ -19,8 +21,8 @@ const Users = () => {
           ))}
         </div>
         <div style={buttons}>
-          <button>prev</button>
-          <button>next</button>
+          <button onClick={prevPage}>prev</button>
+          <button onClick={nextPage}>next</button>
         </div>
       </div>
     );
