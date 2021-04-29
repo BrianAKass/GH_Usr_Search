@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
 :root {
@@ -13,10 +13,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
@@ -112,7 +113,9 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  border: #ccc 1px dotted;
+  /* border: #ccc 1px solid; */
+  border-radius: 15px;
+  box-shadow: #aaa 0rem 0.2rem 4px;
   margin: 0.7rem 0;
 }
 
@@ -196,10 +199,13 @@ img {
   grid-gap: 1rem;
 }
 
+/* Buttons */
+
 .btn {
   display: inline-block;
   background: var(--light-color);
   color: #333;
+  border-radius: 16px;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -224,6 +230,45 @@ img {
   font-size: 0.8rem;
   padding: 0.3rem 1rem;
   margin-right: 0.2rem;
+}
+
+.btn-grid {
+  border: none;
+  transition: background 0.2s ease-in;
+  margin: 0.5rem;
+}
+.btn-grid:hover {
+  background: #333;
+  opacity: 0.9;
+}
+
+button i {
+  background: #f4f4f4;
+  position: fixed;
+  font-size: 3em;
+  top: 50%;
+  color: #333;
+  padding: 1rem 3rem;
+  transition: color 0.2s ease-in;
+  transition: background 0.2s ease-in;
+}
+.btn-grid-right {
+  border-radius: 0 15px 15px 0;
+}
+.btn-grid-left {
+  border-radius: 15px 0 0 15px;
+}
+
+div .div-right:hover button i {
+  color: #f4f4f4;
+  background: #333;
+}
+div .div-left:hover button i {
+  color: #f4f4f4;
+  background: #333;
+}
+button {
+  position: relative;
 }
 
 .badge {
@@ -309,7 +354,28 @@ img {
 
 /* Forms */
 input {
-  margin: 1.2rem 0;
+  /* margin: 1.2rem 0; */
+  display: flex;
+  flex-direction: row;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex {
+  flex: 1 0 auto;
+}
+.flex2 {
+  flex: 0 1 auto;
+  padding: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
 }
 
 .form-text {
@@ -318,20 +384,21 @@ input {
   color: #888;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
 select,
 textarea {
   display: block;
-  width: 100%;
+  width: 50%;
+  flex: 1 0 auto;
   padding: 0.4rem;
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
 
-input[type='submit'],
+input[type="submit"],
 button {
   font: inherit;
 }
@@ -349,7 +416,7 @@ table th {
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0.7rem 2rem;
   z-index: 1;
@@ -366,6 +433,11 @@ table th {
   color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
+}
+
+.navbar a i {
+  color: var(--dark-color);
+  background: var(--light-color);
 }
 
 .navbar a:hover {

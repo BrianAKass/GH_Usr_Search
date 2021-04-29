@@ -28,22 +28,34 @@ const Search = () => {
           name="text"
           placeholder="Search Users..."
           value={text}
+          className="flex"
           onChange={onChange}
         />
-        <input
-          type="submit"
-          value="Search"
-          className="btn btn-dark btn-block"
-        />
+        {githubContext.users.length === 0 ? (
+          <input
+            type="submit"
+            value="Search"
+            className="btn btn-dark flex"
+            style={{ borderRadius: "0px 15px 15px 0px" }}
+          />
+        ) : (
+          <div>
+            <input
+              type="submit"
+              className="btn btn-light flex"
+              onClick={githubContext.clearUsers}
+              value="Clear"
+              style={{ borderRadius: "0px", margin: "0" }}
+            />
+            <input
+              type="submit"
+              value="Search"
+              className="btn btn-dark flex"
+              style={{ borderRadius: "0px 15px 15px 0px" }}
+            />
+          </div>
+        )}
       </form>
-      {githubContext.users.length > 0 && (
-        <button
-          className="btn btn-light btn-block"
-          onClick={githubContext.clearUsers}
-        >
-          Clear
-        </button>
-      )}
     </div>
   );
 };

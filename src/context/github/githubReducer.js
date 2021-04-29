@@ -14,7 +14,8 @@ export default (state, action) => {
     case SEARCH_USERS:
       return {
         ...state,
-        users: action.payload,
+        users: action.payload.items,
+        results: action.payload.total_count,
         loading: false,
       };
     case GET_USER:
@@ -29,6 +30,7 @@ export default (state, action) => {
         users: [],
         page: 0,
         loading: false,
+        results: 0,
         search: "",
       };
     case GET_REPOS: {
@@ -47,14 +49,14 @@ export default (state, action) => {
       return {
         ...state,
         page: state.page + 1,
-        users: action.payload,
+        users: action.payload.items,
         loading: false,
       };
     case LOAD_PREV_PAGE:
       return {
         ...state,
         page: state.page > 1 ? state.page - 1 : 1,
-        users: action.payload,
+        users: action.payload.items,
         loading: false,
       };
     case SET_SEARCH:

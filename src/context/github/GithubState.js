@@ -32,6 +32,7 @@ const GithubState = (props) => {
     repos: [],
     loading: false,
     page: 1,
+    results: 0,
   };
 
   const [state, dispatch] = useReducer(GithubReducer, initialState);
@@ -47,7 +48,7 @@ const GithubState = (props) => {
 
     dispatch({
       type: SEARCH_USERS,
-      payload: res.data.items,
+      payload: res.data,
     });
   };
 
@@ -91,7 +92,7 @@ const GithubState = (props) => {
 
     dispatch({
       type: LOAD_NEXT_PAGE,
-      payload: res.data.items,
+      payload: res.data,
     });
   };
 
@@ -107,7 +108,7 @@ const GithubState = (props) => {
 
     dispatch({
       type: LOAD_PREV_PAGE,
-      payload: res.data.items,
+      payload: res.data,
     });
   };
 
@@ -132,6 +133,7 @@ const GithubState = (props) => {
         repos: state.repos,
         loading: state.loading,
         page: state.page,
+        results: state.results,
         searchUsers,
         clearUsers,
         getUser,
