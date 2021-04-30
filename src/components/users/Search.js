@@ -35,14 +35,14 @@ const Search = () => {
           <input
             type="submit"
             value="Search"
-            className="btn btn-dark flex"
+            className="btn btn-dark"
             style={{ borderRadius: "0px 15px 15px 0px" }}
           />
         ) : (
           <div>
             <input
               type="submit"
-              className="btn btn-light flex"
+              className="btn btn-light"
               onClick={githubContext.clearUsers}
               value="Clear"
               style={{ borderRadius: "0px", margin: "0" }}
@@ -50,7 +50,7 @@ const Search = () => {
             <input
               type="submit"
               value="Search"
-              className="btn btn-dark flex"
+              className="btn btn-dark"
               style={{ borderRadius: "0px 15px 15px 0px" }}
             />
           </div>

@@ -20,7 +20,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: #f3f2ef;
   color: #333;
 }
 
@@ -113,9 +113,10 @@ img {
 /* Cards */
 .card {
   padding: 1rem;
-  /* border: #ccc 1px solid; */
+  border: #ddd 2px solid;
+  background: #fff;
   border-radius: 15px;
-  box-shadow: #aaa 0rem 0.2rem 4px;
+  /* box-shadow: #aaa 0rem 0.2rem 4px; */
   margin: 0.7rem 0;
 }
 
@@ -242,15 +243,17 @@ img {
   opacity: 0.9;
 }
 
-button i {
+div button i {
   background: #f4f4f4;
   position: fixed;
-  font-size: 3em;
+  font-size: 4em;
   top: 50%;
   color: #333;
-  padding: 1rem 3rem;
+  padding: 3rem;
   transition: color 0.2s ease-in;
   transition: background 0.2s ease-in;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 .btn-grid-right {
   border-radius: 0 15px 15px 0;
@@ -259,13 +262,22 @@ button i {
   border-radius: 15px 0 0 15px;
 }
 
-div .div-right:hover button i {
-  color: #f4f4f4;
+div .div-right:hover i {
   background: #333;
+  color: #f4f4f4;
 }
 div .div-left:hover button i {
-  color: #f4f4f4;
   background: #333;
+  color: #f4f4f4;
+}
+
+div .div-right:hover button i {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+div .div-left:hover button i {
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
 }
 button {
   position: relative;
@@ -298,12 +310,22 @@ button {
   color: #fff;
 }
 
-.btn-light,
 .bg-light,
 .badge-light,
 .alert-light {
   background: var(--light-color);
   color: #333;
+}
+
+.btn-light {
+  background: var(--light-color);
+  color: #333;
+  outline: #333 0px solid;
+  transition: outline 0.2s ease-in;
+}
+
+.btn-light:hover {
+  outline: #333 1px solid;
 }
 
 .btn-dark,
@@ -431,8 +453,6 @@ table th {
 
 .navbar a {
   color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
 }
 
 .navbar a i {
@@ -442,6 +462,36 @@ table th {
 
 .navbar a:hover {
   color: var(--light-color);
+}
+
+.navbarLogo {
+  color: #fff;
+  background: #333;
+  margin: 0;
+  font-size: 1.5rem;
+  padding: 0 4px;
+  border-radius: 15px 0 0 15px;
+  transition: opacity 0.2s ease-in;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.navbarLogo div {
+  padding: 0 4px;
+}
+
+.navbarLogo:hover {
+  opacity: 0.8;
+}
+
+.navbar .about {
+  color: #333;
+  transition: opacity 0.2s ease-in;
+}
+
+.navbar .about:hover {
+  opacity: 0.8;
 }
 
 .navbar .welcome span {
