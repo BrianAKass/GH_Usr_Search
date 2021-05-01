@@ -22,10 +22,12 @@ const Users = ({ icon, icon2 }) => {
     return (
       <div style={buttonGrid}>
         {users.length > 0 && (
-          <div className="div-left" onClick={loadPrevPage}>
-            <button className="btn-grid">
-              <i className="fas fa-angle-left btn-grid-left" />
-            </button>
+          <div className="div-left" onClick={page != 0 && loadPrevPage}>
+            {page != 0 && (
+              <button className="btn-grid">
+                <i className="fas fa-angle-left btn-grid-left" />
+              </button>
+            )}
           </div>
         )}
         <div>
@@ -42,10 +44,15 @@ const Users = ({ icon, icon2 }) => {
           </div>
         </div>
         {users.length > 0 && (
-          <div className="div-right" onClick={loadNextPage}>
-            <button className="btn-grid">
-              <i className="fas fa-angle-right btn-grid-right" />
-            </button>
+          <div
+            className="div-right"
+            onClick={users.length === 30 && loadNextPage}
+          >
+            {users.length === 30 && (
+              <button className="btn-grid">
+                <i className="fas fa-angle-right btn-grid-right" />
+              </button>
+            )}
           </div>
         )}
       </div>
