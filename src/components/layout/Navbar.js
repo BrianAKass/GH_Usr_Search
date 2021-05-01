@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="fab fa-github" /> <div>GitHub</div>
       </Link>
       <Search />
-      <Link to="/about" className="about">
+      <Link to="/about" className="btn about">
         About
       </Link>
     </nav>

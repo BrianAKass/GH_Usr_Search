@@ -35,7 +35,7 @@ const User = ({ match }) => {
 
   return (
     <Fragment>
-      <Link to="/" className="btn btn-light">
+      <Link to="/" className="btn btn-light" style={{ marginTop: "2px" }}>
         Back To Search
       </Link>
       Hireable:{" "}

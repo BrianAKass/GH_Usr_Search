@@ -1,7 +1,7 @@
 {
   "name": "github-finder",
+  "homepage": "https://brianakass.github.io/GH_Usr_Search/",
   "version": "0.1.0",
-  "homepage": "BrianAKass.github.io/GH_Usr_Search",
   "private": true,
   "dependencies": {
     "axios": "^0.21.1",

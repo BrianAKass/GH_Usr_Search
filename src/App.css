@@ -116,7 +116,6 @@ img {
   border: #ddd 2px solid;
   background: #fff;
   border-radius: 15px;
-  /* box-shadow: #aaa 0rem 0.2rem 4px; */
   margin: 0.7rem 0;
 }
 
@@ -213,7 +212,8 @@ img {
   cursor: pointer;
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
-  outline: none;
+  box-shadow: 0 #333;
+  transition: box-shadow 0.2s ease-in;
 }
 
 .btn-link {
@@ -320,12 +320,12 @@ button {
 .btn-light {
   background: var(--light-color);
   color: #333;
-  outline: #333 0px solid;
-  transition: outline 0.2s ease-in;
+  box-shadow: 0 #333;
+  transition: box-shadow 0.2s ease-in;
 }
 
 .btn-light:hover {
-  outline: #333 1px solid;
+  box-shadow: 0 0 0 1px #333;
 }
 
 .btn-dark,
@@ -363,6 +363,7 @@ button {
 
 .btn:hover {
   opacity: 0.8;
+  box-shadow: 0 0 0 1px #333 solid;
 }
 
 .bg-light,
@@ -487,11 +488,15 @@ table th {
 
 .navbar .about {
   color: #333;
+  box-shadow: 0 #333;
+  transition: box-shadow 0.2s ease-in;
   transition: opacity 0.2s ease-in;
 }
 
 .navbar .about:hover {
+  color: #333;
   opacity: 0.8;
+  box-shadow: 0 0 0 1px #333;
 }
 
 .navbar .welcome span {
