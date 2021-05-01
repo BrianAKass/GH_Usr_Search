@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import UserItem from "./UserItem";
 import Spinner from "../layout/Spinner";
 import GithubContext from "../../context/github/githubContext";
-import PropTypes from "prop-types";
 
-const Users = ({ icon, icon2 }) => {
+const Users = () => {
   const githubContext = useContext(GithubContext);
 
   const {
@@ -20,10 +19,10 @@ const Users = ({ icon, icon2 }) => {
     return <Spinner />;
   } else {
     return (
-      <div style={buttonGrid}>
+      <div className="buttonGrid">
         {users.length > 0 && (
-          <div className="div-left" onClick={page != 0 && loadPrevPage}>
-            {page != 0 && (
+          <div className="div-left" onClick={page !== 1 && loadPrevPage}>
+            {page !== 1 && (
               <button className="btn-grid">
                 <i className="fas fa-angle-left btn-grid-left" />
               </button>
@@ -37,7 +36,7 @@ const Users = ({ icon, icon2 }) => {
               <h3 className="flex2">Page: {page}</h3>
             </div>
           )}
-          <div style={userStyle}>
+          <div className="userGrid">
             {users.map((user) => (
               <UserItem key={user.id} user={user} />
             ))}
@@ -58,26 +57,6 @@ const Users = ({ icon, icon2 }) => {
       </div>
     );
   }
-};
-Users.defaultProps = {
-  icon: "fas fa-angle-left",
-  icon2: "fas fa-angle-right",
-};
-
-Users.propTypes = {
-  icon: PropTypes.string.isRequired,
-  icon2: PropTypes.string.isRequired,
-};
-
-const userStyle = {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
-  gridGap: "1rem",
-};
-const buttonGrid = {
-  display: "grid",
-  gridTemplateColumns: "0.5fr 2fr 0.5fr",
-  gridGap: ".5rem",
 };
 
 export default Users;

@@ -534,3 +534,17 @@ table th {
     justify-content: center;
   }
 }
+
+/* grid */
+
+.userGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 0.5fr;
+  grid-gap: 0.5rem;
+}

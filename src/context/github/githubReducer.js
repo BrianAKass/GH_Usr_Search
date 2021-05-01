@@ -28,7 +28,7 @@ export default (state, action) => {
       return {
         ...state,
         users: [],
-        page: 0,
+        page: 1,
         loading: false,
         results: 0,
         search: "",
